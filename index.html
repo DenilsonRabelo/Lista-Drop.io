@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Tarefas</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tarefas</title>
 </head>
+
 <body>
-    <main>
-        <div class="tabela">
-            <div class="criacao" id="n_criacao">
-                <h1>Itens</h1>
-                <button class="add_btn" data-target-modal="#todo_form">+ Add Todo</button>
-                <div class="todo" draggable="true">
-                  Buy a Pizza
-                  <span class="close">&times;</span>
-                </div>
-            </div>
-            <div class="criacao">
-                <h1>Não iniciado</h1>
-              </div>
-              <div class="criacao">
-                <h1>Em progesso</h1>
-              </div>
-              <div class="criacao">
-                <h1>Completado</h1>
-              </div>
-        </div>
-        <script src="script.js"></script>
-    </main>
+  <main>
+    <div class="modal" id="todo_form">
+      <div class="header">
+        <div class="titulo">Adicionar Tarefa</div>
+        <button class="btn-modal close-modal">&times;</button>
+      </div>
+
+      <div class="body">
+        <input type="text" id="input_add" />
+        <input type="submit" class="close-modal" value="ADD Tarefa" id="input_submit" />
+      </div>
+    </div>
+
+
+    <div class="tabela">
+      <div class="criacao" id="n_criacao">
+        <h1>Itens</h1>
+        <button class="add_btn " data-target-modal="#todo_form">Add tarefa</button>
+      </div>
+      <div class="criacao">
+        <h1>Não iniciado</h1>
+      </div>
+      <div class="criacao">
+        <h1>Em progesso</h1>
+      </div>
+      <div class="criacao">
+        <h1>Completado</h1>
+      </div>
+    </div>
+
+
+    <div id="overlay"></div>
+    <script src="script.js"></script>
+  </main>
 </body>
+
 </html>

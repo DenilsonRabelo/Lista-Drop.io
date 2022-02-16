@@ -47,3 +47,83 @@ function dragDrop() {
   this.style.transform = "scale(1.0)"
   this.appendChild(drag);
 }
+
+
+
+
+const btns = document.querySelectorAll("[data-target-modal]");
+const close_modals = document.querySelectorAll(".close-modal");
+
+const overlay = document.getElementById("overlay");
+
+btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelector(btn.dataset.targetModal).classList.add("active");
+    overlay.classList.add("active");
+  });
+});
+
+close_modals.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const modal = btn.closest(".modal");
+    modal.classList.remove("active");
+    overlay.classList.remove("active");
+  });
+});
+
+
+
+
+window.onclick = (event) => {
+  if (event.target == overlay) {
+    const modals = document.querySelectorAll(".modal");
+    modals.forEach((modal) => modal.classList.remove("active"));
+    overlay.classList.remove("active");
+  }
+};
+
+
+const todo_submit = document.getElementById("input_submit");
+
+todo_submit.addEventListener("click", createTodo);
+
+function createTodo() {
+  const todo_div = document.createElement("div");
+  const input_val = document.getElementById("input_add").value;
+  const txt = document.createTextNode(input_val);
+
+  todo_div.appendChild(txt);
+  todo_div.classList.add("todo");
+  todo_div.setAttribute("draggable", "true");
+
+
+  const span = document.createElement("span");
+  const span_txt = document.createTextNode("\u00D7");
+  span.classList.add("close");
+  span.appendChild(span_txt);
+
+  todo_div.appendChild(span);
+
+  n_criacao.appendChild(todo_div);
+
+  span.addEventListener("click", () => {
+    span.parentElement.style.display = "none";
+  });
+
+  todo_div.addEventListener("dragstart", dragStart);
+  todo_div.addEventListener("dragend", dragEnd);
+
+  document.getElementById("todo_input").value = "";
+  todo_form.classList.remove("active");
+  overlay.classList.remove("active");
+
+}
+
+
+const close_btns = document.querySelectorAll(".close");
+
+close_btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.style.display = "none";
+  });
+});
