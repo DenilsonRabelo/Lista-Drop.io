@@ -137,8 +137,6 @@ main {
 
 .body {
     margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -183,7 +181,7 @@ main {
 
 #input_submit:hover {
     background-color: #265828;
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 
