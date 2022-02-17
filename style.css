@@ -1,24 +1,27 @@
 *{
     box-sizing: border-box;
+    
 }
 
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #343444;
 }
 
-
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .tabela {
-    margin-top: 50px;
+    margin-top: 10px;
     width: 1000px;
     min-height: 80vh;
     max-height: 300vh;
     display: flex;
+    right: 50%;
     background-color: #f3f3f3;
 }
 
@@ -181,4 +184,36 @@ body {
     background-color: #265828;
     transform: scale(1.1);
 }
+
+
+
+a{
+    text-decoration: none;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 40px;
+}
+
+
+.logo {
+    text-shadow: 0.1em 0.1em 0.2em black;
+    margin-left: 50px;
+    font-size: 30px;
+    font-weight: 800px;
+    color: #f3f3f3;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+
+
   

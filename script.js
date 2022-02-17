@@ -1,3 +1,4 @@
+/*criação do dragdrop*/
 const todos = document.querySelectorAll(".todo");
 const todas_criacao = document.querySelectorAll(".criacao");
 let drag = null;
@@ -50,7 +51,7 @@ function dragDrop() {
 
 
 
-
+/*craiação do modal*/
 const btns = document.querySelectorAll("[data-target-modal]");
 const close_modals = document.querySelectorAll(".close-modal");
 
@@ -83,8 +84,9 @@ window.onclick = (event) => {
 };
 
 
-const todo_submit = document.getElementById("input_submit");
 
+/*craiação do item */
+const todo_submit = document.getElementById("input_submit");
 todo_submit.addEventListener("click", createTodo);
 
 function createTodo() {
